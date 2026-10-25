@@ -1,1 +1,517 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Conheça o e-book Saúde em Primeiro Lugar e aprenda mais sobre saúde, alimentação equilibrada e bem-estar.">
+
+  <title>Saúde em Primeiro Lugar | E-book</title>
+
+  <style>
+    :root {
+      --verde: #14532d;
+      --verde-claro: #218345;
+      --verde-lima: #78bd28;
+      --fundo: #f3f8f1;
+      --texto: #203126;
+      --cinza: #5f7063;
+      --branco: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--texto);
+      line-height: 1.7;
+      background: var(--branco);
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    .barra-topo {
+      background: var(--verde);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    header {
+      padding: 20px 0;
+    }
+
+    .marca {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--verde);
+      font-weight: bold;
+      font-size: 17px;
+    }
+
+    .icone-marca {
+      width: 48px;
+      height: 48px;
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 28px;
+      background: linear-gradient(135deg, #80c52d, #075b3d);
+    }
+
+    .hero {
+      padding: 75px 0;
+      background:
+        radial-gradient(circle at 90% 10%, #e2f2d7, transparent 35%),
+        linear-gradient(135deg, #f7fbf5, #edf6e9);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .etiqueta {
+      color: var(--verde-claro);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    h1 {
+      color: var(--verde);
+      font-size: clamp(38px, 5vw, 66px);
+      line-height: 1.1;
+      margin: 18px 0;
+    }
+
+    .introducao {
+      font-size: 18px;
+      color: #46584b;
+      margin-bottom: 25px;
+    }
+
+    .botao {
+      display: inline-block;
+      padding: 15px 26px;
+      border-radius: 12px;
+      background: var(--verde-claro);
+      color: white;
+      text-decoration: none;
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      box-shadow: 0 8px 20px #21834530;
+      transition: 0.2s;
+    }
+
+    .botao:hover {
+      background: var(--verde);
+      transform: translateY(-2px);
+    }
+
+    .observacao {
+      display: block;
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--cinza);
+    }
+
+    .cartao-livro {
+      padding: 35px 25px;
+      text-align: center;
+      background: white;
+      border: 1px solid #dce9d7;
+      border-radius: 25px;
+      box-shadow: 0 20px 55px #164b2918;
+    }
+
+    .simbolo {
+      width: 145px;
+      height: 145px;
+      margin: 0 auto 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #e5f6d4, #f7fcf3);
+      color: var(--verde);
+      font-size: 85px;
+    }
+
+    .cartao-livro h2 {
+      color: var(--verde);
+      font-size: 29px;
+      line-height: 1.2;
+    }
+
+    .cartao-livro p {
+      color: var(--cinza);
+      margin-top: 12px;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    .titulo-secao {
+      max-width: 720px;
+      text-align: center;
+      margin: 0 auto 38px;
+    }
+
+    .titulo-secao h2 {
+      color: var(--verde);
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .titulo-secao p {
+      color: var(--cinza);
+    }
+
+    .beneficios {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .beneficio {
+      padding: 25px;
+      border: 1px solid #e1ebde;
+      border-radius: 18px;
+      background: white;
+    }
+
+    .beneficio-icone {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .beneficio h3 {
+      color: var(--verde);
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .beneficio p {
+      color: var(--cinza);
+      font-size: 15px;
+    }
+
+    .sobre {
+      background: var(--fundo);
+      text-align: center;
+    }
+
+    .sobre-conteudo {
+      max-width: 780px;
+      margin: auto;
+    }
+
+    .sobre h2 {
+      color: var(--verde);
+      font-size: 34px;
+      margin-bottom: 18px;
+    }
+
+    .sobre p {
+      color: #46584b;
+      font-size: 17px;
+    }
+
+    .secao-compra {
+      padding: 75px 0;
+    }
+
+    .oferta {
+      max-width: 700px;
+      margin: auto;
+      padding: 45px 25px;
+      text-align: center;
+      color: white;
+      border-radius: 25px;
+      background: linear-gradient(135deg, #104a2b, #17683b);
+    }
+
+    .oferta .subtitulo {
+      color: #d6ecd5;
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+
+    .oferta h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      margin: 10px 0;
+      line-height: 1.2;
+    }
+
+    .oferta p {
+      color: #e0f0e2;
+      margin-bottom: 20px;
+    }
+
+    .preco {
+      font-size: 48px;
+      font-weight: bold;
+      margin: 10px 0 25px;
+    }
+
+    .oferta .botao {
+      background: #a4dc55;
+      color: #173d22;
+      box-shadow: none;
+    }
+
+    .oferta .botao:hover {
+      background: #c0ec83;
+    }
+
+    .aviso {
+      max-width: 760px;
+      margin: 25px auto 0;
+      text-align: center;
+      color: var(--cinza);
+      font-size: 12px;
+    }
+
+    footer {
+      border-top: 1px solid #e6eee3;
+      padding: 25px 0;
+      text-align: center;
+      color: var(--cinza);
+      font-size: 14px;
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        padding: 50px 0;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .cartao-livro {
+        max-width: 430px;
+        width: 100%;
+        margin: auto;
+      }
+
+      .beneficios {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 50px 0;
+      }
+
+      .botao {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="barra-topo">
+    Seu bem-estar começa com conhecimento 💚
+  </div>
+
+  <header class="container">
+    <div class="marca">
+      <div class="icone-marca">♥</div>
+      <span>SAÚDE EM PRIMEIRO LUGAR</span>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- APRESENTAÇÃO PRINCIPAL -->
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div>
+          <div class="etiqueta">
+            E-book digital • Saúde e bem-estar
+          </div>
+
+          <h1>
+            Cuide melhor da sua saúde, um passo de cada vez.
+          </h1>
+
+          <p class="introducao">
+            Um material educativo para quem deseja aprender mais
+            sobre saúde, alimentação equilibrada e hábitos saudáveis,
+            no seu ritmo e de onde estiver.
+          </p>
+
+          <a
+            class="botao"
+            href="https://pay.kiwify.com.br/hnxNyIA"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🛒 COMPRAR AGORA
+          </a>
+
+          <span class="observacao">
+            Pagamento realizado pela plataforma Kiwify.
+          </span>
+        </div>
+
+        <div class="cartao-livro">
+          <div class="simbolo">♡</div>
+
+          <h2>
+            Saúde em<br>
+            Primeiro Lugar
+          </h2>
+
+          <p>
+            Informação, equilíbrio e mais qualidade de vida.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BENEFÍCIOS -->
+    <section>
+      <div class="container">
+
+        <div class="titulo-secao">
+          <h2>Conhecimento para escolhas mais conscientes</h2>
+
+          <p>
+            Conteúdo digital pensado para apoiar sua jornada de
+            aprendizado sobre saúde e bem-estar.
+          </p>
+        </div>
+
+        <div class="beneficios">
+
+          <article class="beneficio">
+            <div class="beneficio-icone">🌿</div>
+
+            <h3>Saúde e bem-estar</h3>
+
+            <p>
+              Informações educativas para conhecer melhor temas
+              ligados à saúde e à qualidade de vida.
+            </p>
+          </article>
+
+          <article class="beneficio">
+            <div class="beneficio-icone">🥗</div>
+
+            <h3>Hábitos equilibrados</h3>
+
+            <p>
+              Orientações gerais para refletir sobre alimentação
+              e escolhas do dia a dia.
+            </p>
+          </article>
+
+          <article class="beneficio">
+            <div class="beneficio-icone">📱</div>
+
+            <h3>Acesso digital</h3>
+
+            <p>
+              Leia o material no seu próprio ritmo, em um
+              dispositivo compatível com arquivos PDF.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE O E-BOOK -->
+    <section class="sobre">
+      <div class="container sobre-conteudo">
+
+        <h2>Comece investindo em conhecimento</h2>
+
+        <p>
+          Pequenas escolhas podem fazer parte de uma rotina mais
+          consciente. O e-book <strong>Saúde em Primeiro Lugar</strong>
+          reúne conteúdo educativo para você consultar quando quiser.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- OFERTA E BOTÃO DE COMPRA -->
+    <section class="secao-compra" id="comprar">
+      <div class="container">
+
+        <div class="oferta">
+
+          <div class="subtitulo">Adquira seu e-book</div>
+
+          <h2>Saúde em Primeiro Lugar</h2>
+
+          <p>
+            Tenha acesso ao material digital e leia no seu próprio ritmo.
+          </p>
+
+          <div class="preco">R$ 20,90</div>
+
+          <a
+            class="botao"
+            href="https://pay.kiwify.com.br/hnxNyIA"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🛒 QUERO COMPRAR
+          </a>
+
+        </div>
+
+        <p class="aviso">
+          Este e-book tem finalidade educativa e não substitui
+          avaliação, diagnóstico ou orientação individual de
+          profissionais de saúde. Antes de divulgar a página,
+          confirme se o preço do produto está configurado em
+          R$ 20,90 na Kiwify.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Saúde em Primeiro Lugar • Conteúdo digital educativo
+    </div>
+  </footer>
+
+</body>
+</html>
